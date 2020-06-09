@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileShop.DataAccess.SQL",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileShop.WebUI", "MobileShop.WebUI\MobileShop.WebUI.csproj", "{890B8C68-A2D1-4061-9E10-EA301959D7A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileShop.DataAccess.InMemory", "MobileShop.DataAccess.InMemory\MobileShop.DataAccess.InMemory.csproj", "{453DF7D2-73BD-48F2-B53D-3109F6504BFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{890B8C68-A2D1-4061-9E10-EA301959D7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{890B8C68-A2D1-4061-9E10-EA301959D7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{890B8C68-A2D1-4061-9E10-EA301959D7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453DF7D2-73BD-48F2-B53D-3109F6504BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453DF7D2-73BD-48F2-B53D-3109F6504BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453DF7D2-73BD-48F2-B53D-3109F6504BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453DF7D2-73BD-48F2-B53D-3109F6504BFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
