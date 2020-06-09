@@ -1,1 +1,2 @@
-# MobileShop
+# MobileShop - IN DEVELOPMENT
+Mobile Shop - ASP.NET MVC WEB APPLICATION
