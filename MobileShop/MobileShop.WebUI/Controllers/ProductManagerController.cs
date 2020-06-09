@@ -4,6 +4,7 @@ using MobileShop.Core.ViewModel;
 using MobileShop.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,7 +39,7 @@ namespace MobileShop.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product product, HttpPostedFileBase file)
         {
             if (!ModelState.IsValid)
             {
@@ -46,6 +47,13 @@ namespace MobileShop.WebUI.Controllers
             }
             else
             {
+                if (file!=null)
+                {
+                    //rename the image, therefore it will have unique name in the app
+                    product.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + product.Image);
+                }
+
                 context.Insert(product);
                 context.Commit();
 
@@ -70,7 +78,7 @@ namespace MobileShop.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product, string id)
+        public ActionResult Edit(Product product, string id, HttpPostedFileBase file)
         {
             Product productToEdit = context.Find(id);
             if (product == null)
@@ -84,6 +92,13 @@ namespace MobileShop.WebUI.Controllers
                     return View(product);
                 }
 
+                if (file != null)
+                {
+                    //rename the image, therefore it will have unique name in the app
+                    productToEdit.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + productToEdit.Image);
+                }
+
                 productToEdit.Name = product.Name;
                 productToEdit.InternalMemory = product.InternalMemory;
                 productToEdit.Brand = product.Brand;
@@ -93,7 +108,7 @@ namespace MobileShop.WebUI.Controllers
                 productToEdit.Description = product.Description;
                 productToEdit.OS = product.OS;
                 productToEdit.DisplaySize = product.DisplaySize;
-                productToEdit.Image = product.Image;
+                
 
                 context.Commit();
 

@@ -369,9 +369,11 @@
     <Content Include="Views\BrandManager\Create.cshtml" />
     <Content Include="Views\BrandManager\Edit.cshtml" />
     <Content Include="Views\BrandManager\Delete.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ProductImages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
